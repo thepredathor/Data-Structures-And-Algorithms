@@ -1,6 +1,9 @@
 
 package blind75.linked_list;
 
+import static blind75.linked_list.data_structure.ListNode.printLinkedList;
+import blind75.linked_list.data_structure.ListNode;
+
 public class Add2Numbers {
 
     //~ ----------------------------------------------------------------------------------------------------------------
@@ -42,11 +45,11 @@ public class Add2Numbers {
         ListNode l6 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, null))));
 
         ListNode result1 = addTwoNumbersCorrect(l1, l2);
-        result1.printList();
+        printLinkedList(result1);
         ListNode result2 = addTwoNumbersCorrect(l3, l4);
-        result2.printList();
+        printLinkedList(result2);
         ListNode result3 = addTwoNumbersCorrect(l5, l6);
-        result3.printList();
+        printLinkedList(result3);
     }
 
     public static ListNode addTwoNumbersCorrect(ListNode l1, ListNode l2) {
@@ -104,44 +107,5 @@ public class Add2Numbers {
         }
 
         return head;
-    }
-}
-
-class ListNode {
-
-    //~ ----------------------------------------------------------------------------------------------------------------
-    //~ Instance fields 
-    //~ ----------------------------------------------------------------------------------------------------------------
-
-    int val;
-    ListNode next;
-
-    //~ ----------------------------------------------------------------------------------------------------------------
-    //~ Constructors 
-    //~ ----------------------------------------------------------------------------------------------------------------
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-    //~ ----------------------------------------------------------------------------------------------------------------
-    //~ Methods 
-    //~ ----------------------------------------------------------------------------------------------------------------
-
-    public void printList() {
-        ListNode ln = this;
-        while (ln != null) {
-            System.out.print(ln.val);
-            ln = ln.next;
-        }
-        System.out.println();
     }
 }
